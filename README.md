@@ -27,12 +27,13 @@ DocsQuest is a Streamlit-based intelligent document analysis application designe
 
 ## 📸 Project Preview
 
-> Add your screenshots here 👇
 
-```md
-<img width="1648" height="760" alt="image" src="https://github.com/user-attachments/assets/21d08e2e-1435-41b5-bab8-a7247a067d12" />
 
-```
+
+<img width="1648" height="760" alt="image" src="https://github.com/user-attachments/assets/cda98f50-9a55-424d-adad-7715d7ed8747" />
+
+
+
 <img width="1648" height="766" alt="image" src="https://github.com/user-attachments/assets/0349872c-fbd1-4dbe-a8bf-f8cf2ec7b096" />
 
 ---
