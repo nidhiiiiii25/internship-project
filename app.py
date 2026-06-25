@@ -64,9 +64,9 @@ def upload_pdf():
             text += page.extract_text()
 
         extracted_text = text
-        st.subheader("PDF Extracted Text")
-        st.text(extracted_text)
-
+        
+        st.success("✅ PDF uploaded successfully!")
+        st.info(f"📄 Document contains {len(pdf_reader.pages)} pages.")
         perform_question_answering(extracted_text)
 
 
@@ -82,8 +82,7 @@ def upload_word():
         text = docx2txt.process(document)
 
         extracted_text = text
-        st.subheader("Docx Extracted Text")
-        st.text(extracted_text)
+        st.success("✅ Word document uploaded successfully.")
         
         perform_question_answering(extracted_text)
 
@@ -99,8 +98,8 @@ def upload_image():
 
         # Extract text from the uploaded image
         extracted_text = pytesseract.image_to_string(img)
-        st.subheader("Image Extracted Text")
-        st.text(extracted_text)
+        
+        st.success("✅ Image uploaded successfully!")
         
         perform_question_answering(extracted_text)
 
@@ -133,7 +132,7 @@ def perform_question_answering(text):
 
         docs = knowledge_base.similarity_search(user_question)
         
-        llm = ChatGroq(model="llama3-8b-8192",groq_api_key=groq_api_key)
+        llm = ChatGroq(model="llama-3.3-70b-versatile",groq_api_key=groq_api_key)
         chain = load_qa_chain(llm, chain_type="stuff")
         with get_openai_callback() as cb:
             response = chain.run(input_documents=docs, question=user_question)
