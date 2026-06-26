@@ -74,14 +74,6 @@ Run the application
 streamlit run app.py
 ```
 
-## 📸 Screenshots
-
-Add screenshots of:
-
-* Home page
-* Upload interface
-* Question answering
-* AI-generated response
 
 ## 📈 Future Improvements
 
