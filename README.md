@@ -1,92 +1,99 @@
-# DocsQuest 📄✨
 
-DocsQuest is a Streamlit-based intelligent document analysis application designed to simplify document interaction and information retrieval. The project focuses on creating a clean and interactive workflow for processing, analyzing, and visualizing document-based insights.
 
----
+# 📄 DocQuest
 
-## 🚀 Features
+An AI-powered document intelligence application that allows users to upload **PDF**, **DOCX**, and **image** files, ask questions in natural language, generate summaries, and retrieve context-aware answers using Large Language Models.
 
-* 📂 Upload and analyze documents
-* 🔍 Smart information extraction
-* 📊 Interactive Streamlit dashboard
-* 🤖 AI/ML-powered processing workflows
-* ⚡ Fast and lightweight interface
+## 🌐 Live Demo
 
----
+**Application:** https://docquest-4qb447dtnchnyseqx6khtd.streamlit.app/
 
-## 🛠️ Tech Stack
+## ✨ Features
+
+* Upload PDF, DOCX, and image files
+* Ask questions about uploaded documents
+* AI-generated document summaries
+* Semantic search using vector embeddings
+* OCR support for images
+* Session history
+* Fast responses powered by Groq Llama 3.3 70B
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+* Streamlit
+
+**Backend**
 
 * Python
-* Streamlit
-* Pandas
-* NumPy
-* Scikit-learn
-* OpenCV
 
----
+**AI & NLP**
 
-## 📸 Project Preview
+* LangChain
+* HuggingFace Embeddings
+* Sentence Transformers
+* Groq API
+* Llama 3.3 70B
 
+**Vector Search**
 
+* FAISS
 
+**Document Processing**
 
-<img width="1648" height="760" alt="image" src="https://github.com/user-attachments/assets/cda98f50-9a55-424d-adad-7715d7ed8747" />
+* PyPDF2
+* docx2txt
+* pytesseract
+* Pillow
 
+## 🚀 Getting Started
 
-
-<img width="1648" height="766" alt="image" src="https://github.com/user-attachments/assets/0349872c-fbd1-4dbe-a8bf-f8cf2ec7b096" />
-
----
-
-## ▶️ Run Locally
-
-Clone the project:
-
-```bash
-git clone https://github.com/yourusername/docsquest.git
-cd docsquest
-```
-
-Create virtual environment:
+Clone the repository
 
 ```bash
-python -m venv venv
+git clone https://github.com/nidhiiiiii25/internship-project.git
+cd internship-project
 ```
 
-Activate environment:
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the app:
+Create a `.env` file
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+Run the application
 
 ```bash
 streamlit run app.py
 ```
 
----
+## 📸 Screenshots
 
-## 🌐 Deployment
+Add screenshots of:
 
-The project is designed for deployment using Streamlit Community Cloud.
+* Home page
+* Upload interface
+* Question answering
+* AI-generated response
 
----
+## 📈 Future Improvements
 
-## 📌 Future Improvements
+* Support multiple documents
+* Source citations
+* Conversation memory
+* ChromaDB/Pinecone integration
+* Docker deployment
+* User authentication
 
-* PDF summarization
-* Multi-document support
-* Chat with documents
-* Cloud database integration
-* Advanced NLP pipelines
+## 👩‍💻 Author
 
----
+**Nidhi Iliger**
 
-
+GitHub: https://github.com/nidhiiiiii25
