@@ -1,6 +1,7 @@
 
 streamlit
 langchain
+langchain.chains
 langchain-community
 langchain-huggingface
 langchain-groq
