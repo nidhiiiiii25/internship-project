@@ -16,3 +16,4 @@ langchain-community
 langchain_groq
 llama-index-embeddings-huggingface
 langchain_huggingface
+langchains
