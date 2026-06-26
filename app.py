@@ -21,14 +21,60 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
 st.set_page_config(page_title="DocQuest", page_icon=":robot:")
-st.title("DocQuest: Empowering Your Documents with AI")
+st.markdown("""
+<style>
+
+.main{
+    background:#111827;
+}
+
+h1{
+    color:#C084FC;
+    font-size:55px;
+}
+
+h2,h3{
+    color:#E5E7EB;
+}
+
+.stButton>button{
+    background:#8B5CF6;
+    color:white;
+    border-radius:12px;
+    border:none;
+    padding:0.6rem 1rem;
+    font-weight:bold;
+}
+
+.stButton>button:hover{
+    background:#7C3AED;
+}
+
+.stTextInput input{
+    border-radius:10px;
+}
+
+</style>
+""",unsafe_allow_html=True)
+#st.title("DocQuest: Empowering Your Documents with AI")
+st.title("📄 DocQuest")
+st.caption("AI-powered Document Intelligence")
 #st.subheader('AI App Implemented By [Maximilien Kpizingui](https://kpizmax.hashnode.dev)')
-'''
-Say goodbye to manual PDF and DOCX and PNG files text searching and summarization! Our AI-powered app instantly extracts valuable insights from your PDF, DOCX and PNG file, saving you time and effort.With a user-friendly interface, upload your PDF, ask questions, and receive accurate answers in seconds.
-Our intelligent algorithms analyze the text, understand context,provide precise answers, write a new content and summarization even for complex queries.Keep track of your queries with session history and easily clear it when needed.
-Experience the power of AI to unlock information from PDFs,DOCXs and Image text files  with our secure and efficient AI App.
-'''
-st.image("post.jpg")
+#'''
+#Say goodbye to manual PDF and DOCX and PNG files text searching and summarization! Our AI-powered app instantly extracts valuable insights from your PDF, DOCX and PNG file, saving you time and effort.With a user-friendly interface, upload your PDF, ask questions, and receive accurate answers in seconds.
+#Our intelligent algorithms analyze the text, understand context,provide precise answers, write a new content and summarization even for complex queries.Keep track of your queries with session history and easily clear it when needed.
+#Experience the power of AI to unlock information from PDFs,DOCXs and Image text files  with our secure and efficient AI App.
+#'''
+#st.image("post.jpg")
+st.markdown("""
+### 🚀 Features
+
+- 📄 Upload **PDF, DOCX or PNG**
+- 🤖 Ask questions in natural language
+- 📝 Generate summaries
+- 🔍 AI-powered semantic search
+- 💬 Session history
+""")
 
 if 'session_history' not in st.session_state:
     st.session_state['session_history'] = []
@@ -53,6 +99,7 @@ def main():
 
 
 def upload_pdf():
+    st.info("✨ Upload a document and let AI answer your questions instantly.")
     st.subheader("Upload your PDF document")
     pdf = st.file_uploader("Choose a PDF file", type="pdf")
 
@@ -105,9 +152,13 @@ def upload_image():
 
 
 def perform_question_answering(text):
-    st.title("Question Answering")
-    user_question = st.text_input("Ask a question:")
-    if st.button("Search"):
+    st.subheader("💬 Ask Anything About Your Document")
+    #user_question = st.text_input("What do you want to know about the document?")
+    user_question = st.text_input(
+    "Ask a question",
+    placeholder="Example: Summarize the document"
+    ) 
+    if st.button("🔍 Ask AI"):
         st.session_state['session_history'].append((user_question, ""))
 
         text_splitter = CharacterTextSplitter(
@@ -140,7 +191,10 @@ def perform_question_answering(text):
 
         st.session_state['session_history'][-1] = (user_question, response)
 
-        st.write(response)
+        #st.write(response)
+        st.markdown("## 🤖 Answer")
+
+        st.info(response)
 
 
 def display_session_history():
